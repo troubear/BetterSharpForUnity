@@ -5,15 +5,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace />
-        <LangVersion>11</LangVersion>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>..\Packages\BetterSharpForUnity\Precompiled</OutputPath>
+      <OutputPath>..\..\Packages\BetterSharpForUnity\Precompiled\</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>..\Packages\BetterSharpForUnity\Precompiled</OutputPath>
+      <OutputPath>..\..\Packages\BetterSharpForUnity\Precompiled\</OutputPath>
     </PropertyGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterSharpForUnity.Precompiled", "BetterSharpForUnity.Precompiled.csproj", "{E427C7BE-B98C-40CE-91AD-73804D3F51D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterSharpForUnity.Precompiled", "src\BetterSharpForUnity.Precompiled.csproj", "{E427C7BE-B98C-40CE-91AD-73804D3F51D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
