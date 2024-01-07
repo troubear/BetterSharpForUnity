@@ -14,12 +14,12 @@ internal class CsprojPostprocessor : AssetPostprocessor
     private const int AvailableLangVersion =
 #if UNITY_2022_3_OR_NEWER
 #if UNITY_2022_3_0 || UNITY_2022_3_1 || UNITY_2022_3_2 || UNITY_2022_3_3 || UNITY_2022_3_4 || UNITY_2022_3_5 || UNITY_2022_3_6 || UNITY_2022_3_7 || UNITY_2022_3_8 || UNITY_2022_3_9 || UNITY_2022_3_10 || UNITY_2022_3_11
-            10_0;
+        10_0;
 #else // UNITY_2022_3_12_OR_NEWER
         11_0;
 #endif
 #else // !UNITY_2022_3_OR_NEWER
-            DefaultLangVersion;
+        DefaultLangVersion;
 #endif
     private const string cscrspFileName = "csc.rsp";
 

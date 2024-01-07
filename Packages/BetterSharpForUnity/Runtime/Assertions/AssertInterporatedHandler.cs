@@ -1,10 +1,11 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Object = UnityEngine.Object;
+using static BetterSharp.BetterSharpInternal;
 
-namespace BetterSharp.Assersions;
+namespace BetterSharp.Assertions;
 
-internal struct AssertInterpolatedStringHandler
+internal readonly struct AssertInterpolatedStringHandler
 {
     private readonly StringBuilder? _builder;
 
@@ -24,25 +25,26 @@ internal struct AssertInterpolatedStringHandler
 
     public void AppendLiteral(string s)
     {
-        _builder?.Append(s);
+        _builder!.Append(s);
     }
 
     public void AppendFormatted<T>(T t)
     {
-        _builder?.Append(t);
+        _builder!.Append(t);
     }
 
     internal string GetFormattedText()
     {
-        return _builder?.ToString() ?? "";
+        return _builder!.ToString();
     }
 }
 
 [InterpolatedStringHandler]
-public ref struct AssertIsTrueInterpolatedStringHandler
+public readonly ref struct AssertIsTrueInterpolatedStringHandler
 {
-    private AssertInterpolatedStringHandler _builder;
+    private readonly AssertInterpolatedStringHandler _builder;
 
+    [SuppressMessage("ReSharper", "UnusedParameter.Local")]
     public AssertIsTrueInterpolatedStringHandler(
         int literalLength, int formattedCount, bool condition, out bool shouldAppend)
     {
@@ -66,10 +68,11 @@ public ref struct AssertIsTrueInterpolatedStringHandler
 }
 
 [InterpolatedStringHandler]
-public ref struct AssertIsFalseInterpolatedStringHandler
+public readonly ref struct AssertIsFalseInterpolatedStringHandler
 {
-    private AssertInterpolatedStringHandler _builder;
+    private readonly AssertInterpolatedStringHandler _builder;
 
+    [SuppressMessage("ReSharper", "UnusedParameter.Local")]
     public AssertIsFalseInterpolatedStringHandler(
         int literalLength, int formattedCount, bool condition, out bool shouldAppend)
     {
@@ -92,29 +95,16 @@ public ref struct AssertIsFalseInterpolatedStringHandler
     }
 }
 
-internal static class IsUnityObject<T> where T : class
-{
-    public static readonly bool Value = typeof(Object).IsAssignableFrom(typeof(T));
-}
-
 [InterpolatedStringHandler]
-public ref struct AssertIsNullInterpolatedStringHandler<TValue> where TValue : class
+public readonly ref struct AssertIsNullInterpolatedStringHandler<TValue> where TValue : class
 {
-    private AssertInterpolatedStringHandler _builder;
+    private readonly AssertInterpolatedStringHandler _builder;
 
+    [SuppressMessage("ReSharper", "UnusedParameter.Local")]
     public AssertIsNullInterpolatedStringHandler(
         int literalLength, int formattedCount, TValue? value, out bool shouldAppend)
     {
-        bool condition;
-        if (IsUnityObject<TValue>.Value)
-        {
-            condition = value as Object == null;
-        }
-        else
-        {
-            condition = value == null;
-        }
-
+        var condition = IsNull(value);
         _builder = new AssertInterpolatedStringHandler(literalLength, condition, out shouldAppend);
     }
 
@@ -135,23 +125,15 @@ public ref struct AssertIsNullInterpolatedStringHandler<TValue> where TValue : c
 }
 
 [InterpolatedStringHandler]
-public ref struct AssertIsNotNullInterpolatedStringHandler<TValue> where TValue : class
+public readonly ref struct AssertIsNotNullInterpolatedStringHandler<TValue> where TValue : class
 {
-    private AssertInterpolatedStringHandler _builder;
+    private readonly AssertInterpolatedStringHandler _builder;
 
+    [SuppressMessage("ReSharper", "UnusedParameter.Local")]
     public AssertIsNotNullInterpolatedStringHandler(
         int literalLength, int formattedCount, TValue? value, out bool shouldAppend)
     {
-        bool condition;
-        if (IsUnityObject<TValue>.Value)
-        {
-            condition = (bool)(value as Object);
-        }
-        else
-        {
-            condition = value != null;
-        }
-
+        var condition = IsNotNull(value);
         _builder = new AssertInterpolatedStringHandler(literalLength, condition, out shouldAppend);
     }
 

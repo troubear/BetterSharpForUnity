@@ -1,6 +1,6 @@
 {
     "name": "BetterSharpForUnity.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "BetterSharp",
     "references": [
         "GUID:ba2bccdfb9449e94b8e103c7f73650fb"
     ],

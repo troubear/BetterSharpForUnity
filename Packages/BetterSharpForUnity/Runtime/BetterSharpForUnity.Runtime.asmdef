@@ -1,6 +1,6 @@
 {
     "name": "BetterSharpForUnity.Runtime",
-    "rootNamespace": "",
+    "rootNamespace": "BetterSharp",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
