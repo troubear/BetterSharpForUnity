@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.github-troubear.bettersharpforunity": {
+      "version": "file:BetterSharpForUnity",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,

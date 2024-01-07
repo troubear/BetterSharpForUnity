@@ -1,0 +1,8 @@
+{
+    "name": "com.github-troubear.bettersharpforunity",
+    "displayName": "BetterSharpForUnity",
+    "version": "0.0.1",
+    "unity": "2022.3",
+    "description": "Utilities that empower Unity/C# developers",
+    "license": "MIT"
+}

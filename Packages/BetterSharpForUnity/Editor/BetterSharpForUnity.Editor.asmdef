@@ -1,0 +1,16 @@
+{
+    "name": "BetterSharpForUnity.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ba2bccdfb9449e94b8e103c7f73650fb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
