@@ -54,6 +54,6 @@ Provides a compatible subset API of `UnityEngine.Assertions.Assert` that leverag
 
 - String interpolation of message is performed only if the assertion fails. You don't have to be afraid of GC anymore.
 - Assertion expressions are output to the log as strings. Good news for all you lazy people.
-- `IsTrue` and `IsFalse` can benefit from static code analysis as well as [System.Diagnostics.Debug.Assert](https://learn.microsoft.com/ja-jp/dotnet/api/system.diagnostics.debug.assert)
+- `IsTrue` and `IsFalse` can benefit from static code analysis as well as [System.Diagnostics.Debug.Assert](https://learn.microsoft.com/dotnet/api/system.diagnostics.debug.assert)
   - If NRT is enabled, it is better to use this for null checks as well.
    
