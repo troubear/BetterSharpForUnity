@@ -80,7 +80,7 @@ public static class Assert
     [Conditional(NeverDefinedSymbol)]
 #endif
     public static void IsFalse(
-        [DoesNotReturnIf(false)] [AssertionCondition(AssertionConditionType.IS_FALSE)]
+        [DoesNotReturnIf(true)] [AssertionCondition(AssertionConditionType.IS_FALSE)]
         bool condition,
         [InterpolatedStringHandlerArgument("condition")]
         ref AssertIsFalseInterpolatedStringHandler message,
@@ -104,7 +104,7 @@ public static class Assert
     [Conditional(NeverDefinedSymbol)]
 #endif
     public static void IsFalse(
-        [DoesNotReturnIf(false)] [AssertionCondition(AssertionConditionType.IS_FALSE)]
+        [DoesNotReturnIf(true)] [AssertionCondition(AssertionConditionType.IS_FALSE)]
         bool condition,
         string? message = null,
         [CallerArgumentExpression("condition")]
