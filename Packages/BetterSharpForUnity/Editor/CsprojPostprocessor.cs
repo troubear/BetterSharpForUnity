@@ -24,7 +24,7 @@ internal class CsprojPostprocessor : AssetPostprocessor
     private const string cscrspFileName = "csc.rsp";
 
     private static readonly Regex s_cscrspIncludePattern =
-        new($@"<None Include=""(.*?)\\{cscrspFileName}"" />", RegexOptions.Compiled);
+        new($@"<None Include=""(.*?)[\\/]{cscrspFileName}"" />", RegexOptions.Compiled);
 
     private static readonly Regex s_langVersionPattern =
         new(@"<LangVersion>(.*?)</LangVersion>", RegexOptions.Compiled);
