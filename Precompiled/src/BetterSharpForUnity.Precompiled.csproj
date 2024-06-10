@@ -18,7 +18,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="JetBrains.Annotations" Version="2024.2.0-eap1" />
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>.\..\Copy UnityEngine.CoreModule.dll under this folder/UnityEngine.CoreModule.dll</HintPath>
+        <Private>false</Private>
+      </Reference>
     </ItemGroup>
 
 </Project>
